@@ -1,9 +1,8 @@
 const mongoose = require('mongoose')
 
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
+mongoose.connect(`mongodb://localhost/guitarCollection`)
+
+const db = mongoose.connection;
 
 module.exports = {
   Guitar: require('./Guitar'),
