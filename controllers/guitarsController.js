@@ -24,11 +24,16 @@ router.post('/', (req, res) => {
 })
 
 router.put('/:id', (req, res) => {
-    res.send('hello from PUT /guitars/:id')
+    models.Guitar.update({id: req.params.id}. {$set: {make: `${whatever}`}})
+    .then((updatedGuitar) => {
+        res.status(200).json({ updatedGuitar })
+    })
 })
 
 router.delete('/:id', (req, res) => {
-    res.send('hello from DELETE /guitars/:id')
+    models.Guitar.deleteMany().then(() => {
+        console.log('done');
+      })
 })
 
 module.exports = router
