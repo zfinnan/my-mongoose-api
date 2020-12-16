@@ -24,7 +24,7 @@ router.post('/', (req, res) => {
 })
 
 router.put('/:id', (req, res) => {
-    models.Guitar.update({id: req.params.id}. {$set: {make: `${whatever}`}})
+    models.Guitar.update({id: req.params.id}, {$set: {make: `${whatever}`}})
     .then((updatedGuitar) => {
         res.status(200).json({ updatedGuitar })
     })
